@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="profile-container">
+    <div class="profile-header">
+        <img src="{{ user.profile_picture }}" alt="Profile Picture" class="profile-pic">
+        <h1>{{ user.full_name }}</h1>
+        <p>@{{ user.username }}</p>
+        <p>{{ user.location }}</p>
+        <p>Joined {{ user.date_joined }}</p>
+        <p class="bio">{{ user.bio }}</p>
+    </div>
+    
+    <div class="profile-stats">
+        <p><strong>{{ user.posts }}</strong> Posts</p>
+        <p><strong>{{ user.followers }}</strong> Followers</p>
+        <p><strong>{{ user.following }}</strong> Following</p>
+    </div>
+
+    <button class="follow-btn">Follow</button>
+</div>
+{% endblock %}
